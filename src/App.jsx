@@ -1,59 +1,95 @@
 import { useState } from 'react';
-import isOdd from 'is-odd';
-import isEven from 'is-even';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css'
+
+// components
+import Button from './components/Button';
+import Props from './Props';
+
+// react function component by PascalCase
+function LargeText() {
+  return (
+    <span>large text</span>
+  )
+}
+
+function SmallText() {
+  return (
+    <span>small text</span>
+  )
+}
 
 function App() {
-  const [count, setCount] = useState(0)
-  const checkIsOdd = isOdd(9)
+  // variables
+  const count = 15; // valid javascript 
+  const user = {
+    firstName: 'John',
+    lastName: 'Doe',
+    avatar: 'https://picsum.photos/200/300',
+  }
+  const expressionJSX = (
+    <div>
+      express in JSX variable
+    </div>
+  )
 
-  console.log("isOdd", checkIsOdd)
-  console.log("isEven",  isEven(9))
+  // JSX expressions must have one parent element
+  const parentElement = (
+    <>
+      <div>parent element</div>
+      <div>parent element</div>
+    </>
+  )
+
+  // normal function of javasript by not PascalCase
+  function renderButton() {
+    return (
+      <button>Click me</button>
+    )
+  }
 
   // JSX
   return (
-    <>
-      dsadasdas
+    <article>
+      <h1>My First Component</h1>
+      <ol>
+        <li>Components: UI Building Blocks</li>
+        <li>Defining a Component</li>
+        <li>Using a Component</li>
+      </ol>
+
+      <h3>Expression in JSX</h3>
+      <div>Count: {count} </div>
+      <div>Operator: {count > 10 ? <span>large</span> : <span>small</span>}</div>
+      <div>Operator with react component: {count > 10 ? <LargeText /> : <SmallText />}</div>
+
+      <br />
+      <div>{expressionJSX}</div>
+      <div>JSX with function {renderButton()}</div>
+      <div>JSX with function {renderButton()}</div>
+      <br />
+
+      <div>JSX expressions must have one parent element: {parentElement}</div>
+
+      <br />
+      <div>render JSX with element must be  closed</div>
+      <div />
+
+      <br />
+      <div>render JSX with react function component</div>
+      <Button />
+
+      <br />
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        render JSX with images:
+        The alt attribute provides alternative information for an image if a 
+        user for some reason cannot view it (because of slow connection, an 
+        error in the src attribute, or if the user uses a screen reader).
       </div>
-      <h1>Vite + React tony nguyen</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <img src={user.avatar} width={40} height={40} alt="person" />
+   
+      <Props />
+   
+   </article>
   )
 }
 
 export default App
-
-
-
-/*
-dependencies
-
-
-source code build: index.js (2Mb) + 20kb -> 2.02mb
-
-
-devdependencies
-  is-odd: 20kb
-
-source code build: index.js (2Mb) 
-
-*/
