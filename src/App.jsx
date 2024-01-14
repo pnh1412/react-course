@@ -3,6 +3,7 @@ import { useState } from 'react';
 // components
 import Button from './components/Button';
 import Props from './Props';
+import State from './State';
 
 // react function component by PascalCase
 function LargeText() {
@@ -87,6 +88,18 @@ function App() {
       <img src={user.avatar} width={40} height={40} alt="person" />
    
       <Props />
+
+      <State />
+
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
    
    </article>
   )

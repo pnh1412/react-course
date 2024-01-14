@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Person(props) {
   console.log(props)
@@ -28,11 +29,38 @@ function Person(props) {
   )
 }
 
-
 function Button() {
   return (
     <button>Click me</button>
   )
+}
+
+// destructuring: props.firstName => { firstName } = props
+// default value: { gender = "Male" }
+// spread operator: { ...spreadPropsCity }
+// rest operator: { ...restProps }
+function PropWithDestructuring({ firstName, lastName, gender = "Male", country, 
+city, textButton = "Click me", children, ...restProps }) {
+  console.log('PropWithDestructuring:',  restProps)
+  return (
+    <div>
+      firstName: {firstName} <br />
+      lastName: {lastName} <br />
+      gender: {gender} <br />
+      country: {country} <br />
+      city: {city} <br />
+      <button {...restProps}>{textButton}</button> <br />
+
+      Props children: {children}
+    </div>
+  )
+}
+
+PropWithDestructuring.propTypes = {
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  gender: PropTypes.string,
+  country: PropTypes.string,
 }
 
 function Props() {
@@ -46,6 +74,11 @@ function Props() {
     return (
       <span>render text</span>
     )
+  }
+
+  const spreadPropsCity = {
+    country: 'VN',
+    city: 'HCM',
   }
 
   return (
@@ -69,6 +102,18 @@ function Props() {
         buttonComponent={<Button />} // React component
         elementComponent={Button} // React element
       />
+
+      <h3>Props with Destructuring</h3>
+      <PropWithDestructuring 
+        firstName={brand} // string
+        lastName="Tony" // string
+        type="button"
+        disabled={true}
+        onClick={() => {}} 
+        {...spreadPropsCity}
+      >
+        this is children
+      </PropWithDestructuring>
     </div>
   )
 }
