@@ -6,6 +6,7 @@ import Props from './Props';
 import State from './State';
 import Components from './Components';
 import ComposeComponent from './sampleApp/ComposeComponent';
+import HauComposeComponent from './sampleApp/HauComposeComponent';
 
 // react function component by PascalCase
 function LargeText() {
@@ -107,7 +108,7 @@ function App() {
       <br />
       <br />
       <br />
-   
+      <HauComposeComponent />
    </article>
   )
 }
