@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Button from './components/Button';
 import Props from './Props';
 import State from './State';
+import Components from './Components';
+import ComposeComponent from './sampleApp/ComposeComponent';
 
 // react function component by PascalCase
 function LargeText() {
@@ -91,6 +93,11 @@ function App() {
 
       <State />
 
+      <Components 
+        count={count}
+      />
+
+      <ComposeComponent />
 
       <br />
       <br />

@@ -1,13 +1,22 @@
 import React from 'react';
 
+
+// statless component
 // traditional function component
-export default function Button() {
+export default function Button({ textButton = 'Default', danger = false, ...restProps }) {
   // JSX
   return (
-    <button type="button">Default</button>
+    <button 
+      className="button"
+      style={{
+        backgroundColor: danger ? 'red' : 'green',
+      }} 
+      type="button" {...restProps}
+    >
+      {textButton}
+    </button>
   );
 }
-
 
 // arrow function component
 // const Button = () => {
