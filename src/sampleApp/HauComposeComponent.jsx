@@ -2,7 +2,7 @@ import React from 'react';
 import '../index.css';
 
 function Button({ label }) {
-  return <button>{label}</button>;
+  return <button className = "custom-button" >{label}</button>;
 }
 
 function Text({ content }) {
@@ -16,7 +16,7 @@ function HauComposeComponent() {
         <Text content="No Items!" />
       </div>
       <div className="container">
-        <Button className = "custom-button" label="Increasement" />
+        <Button label="Increasement" />
       </div>
       
     </div>
