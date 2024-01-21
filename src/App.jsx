@@ -7,6 +7,7 @@ import State from './State';
 import Components from './Components';
 import ComposeComponent from './sampleApp/ComposeComponent';
 import HauComposeComponent from './sampleApp/HauComposeComponent';
+import HauConditionalRendering from './sampleApp/HauConditionalRendering';
 
 // react function component by PascalCase
 function LargeText() {
@@ -100,15 +101,18 @@ function App() {
 
       <ComposeComponent />
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <HauComposeComponent />
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      
+      <HauConditionalRendering />
    </article>
   )
 }

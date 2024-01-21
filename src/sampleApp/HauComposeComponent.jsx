@@ -17,8 +17,7 @@ function HauComposeComponent() {
       </div>
       <div className="container">
         <Button label="Increasement" />
-      </div>
-      
+      </div> 
     </div>
   );
 }
