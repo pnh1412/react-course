@@ -106,17 +106,15 @@ function App() {
 
       <h2>Sample App: ComposeComponent</h2>
       <HauComposeComponent />
-        
+      <HauComposeComponent />
+      <HauConditionalRendering />
+
+
       <br />
       <ConditionalRendering />
 
       <br />
       <List />
-
-
-      <HauComposeComponent />
-      <HauConditionalRendering />
-
       <br />
       <br />
       <br />
