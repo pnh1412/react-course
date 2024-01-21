@@ -58,3 +58,19 @@ ul {
 .card_content {
   padding: 0 10px;
 }
+
+.productList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+}
+
+.productList li {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.productList li + li {
+  margin-top: 10px;
+}

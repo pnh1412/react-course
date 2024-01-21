@@ -13,6 +13,13 @@ function Components({ count }) {
   //   console.log('cancel update')
   // }
 
+  // format name function event handle: handle + name of event, on + name of event. Ex: handleE, onClick ....
+  // memory A. When component re-render -> function handleShow() will be re-create (new memory)
+  function handleShow() {
+    console.log('show')
+  }
+
+
   // jsx
   return (
     <div>
@@ -44,6 +51,19 @@ function Components({ count }) {
 
       <h3>Statefull component</h3>
       This is props from parent component: {count}
+
+
+      <h3>handle event in react</h3>
+
+      <span 
+        onClick={handleShow} // pass name function
+        // onClick={() => {
+        //   console.log('show')
+        // }} // inline function
+      >
+        please click
+      </span>
+
     </div>
   )
 }
