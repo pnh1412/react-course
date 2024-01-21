@@ -11,7 +11,6 @@ import ConditionalRendering from './ConditionalRendering';
 import List from './List';
 import HauConditionalRendering from './sampleApp/HauConditionalRendering';
 import HauList from './sampleApp/HauList';
-
 // react function component by PascalCase
 function LargeText() {
   return (
@@ -107,17 +106,15 @@ function App() {
 
       <h2>Sample App: ComposeComponent</h2>
       <HauComposeComponent />
-        
+      <HauComposeComponent />
+      <HauConditionalRendering />
+      <HauList />
+
       <br />
       <ConditionalRendering />
 
       <br />
       <List />
-
-
-      <HauComposeComponent />
-      <HauConditionalRendering />
-      <HauList />
       <br />
       <br />
       <br />
