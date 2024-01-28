@@ -11,6 +11,10 @@ import ConditionalRendering from './ConditionalRendering';
 import List from './List';
 import HauConditionalRendering from './sampleApp/HauConditionalRendering';
 import HauList from './sampleApp/HauList';
+import GuestGreeting from './sampleApp/GuestGreeting';
+import CSS from './CSS';
+import LiftingStateUp from './LiftingStateUp';
+
 // react function component by PascalCase
 function LargeText() {
   return (
@@ -114,7 +118,17 @@ function App() {
       <ConditionalRendering />
 
       <br />
+      <GuestGreeting />
+
+      <br />
+      <CSS  />
+
+      <br />
       <List />
+
+      <br />
+      <LiftingStateUp />
+      
       <br />
       <br />
       <br />

@@ -11,7 +11,8 @@ export default function Button({ textButton = 'Default', danger = false, ...rest
       style={{
         backgroundColor: danger ? 'red' : 'green',
       }} 
-      type="button" {...restProps}
+      type="button" 
+      {...restProps}
     >
       {textButton}
     </button>

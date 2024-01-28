@@ -74,3 +74,24 @@ ul {
 .productList li + li {
   margin-top: 10px;
 }
+
+.heading {
+  font-size: 30px;
+}
+
+.todoList {
+  margin-top: 8px;
+}
+
+.todoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.todoItem + .todoItem {
+  margin-top: 8px;
+}
