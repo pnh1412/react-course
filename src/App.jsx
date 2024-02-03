@@ -14,7 +14,8 @@ import HauList from './sampleApp/HauList';
 import GuestGreeting from './sampleApp/GuestGreeting';
 import CSS from './CSS';
 import LiftingStateUp from './LiftingStateUp';
-
+import HauShoeCart from './sampleApp/HauShoeCart';
+import HauBox from './sampleApp/HauBox';
 // react function component by PascalCase
 function LargeText() {
   return (
@@ -113,7 +114,6 @@ function App() {
       <HauComposeComponent />
       <HauConditionalRendering />
       <HauList />
-
       <br />
       <ConditionalRendering />
 
@@ -138,6 +138,8 @@ function App() {
       <br />
       <br />
 
+    <HauShoeCart />
+    <HauBox />
    </article>
   )
 }
