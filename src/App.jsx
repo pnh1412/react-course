@@ -17,6 +17,8 @@ import LiftingStateUp from './LiftingStateUp';
 // import HauShoeCart from './sampleApp/HauShoeCart';
 import HauBox from './sampleApp/HauBox';
 // react function component by PascalCase
+import Form from './Form';
+
 function LargeText() {
   return (
     <span>large text</span>
@@ -133,6 +135,9 @@ function App() {
       {/* <HauShoeCart /> */}
       <HauBox />
       
+      <br />
+      <Form />
+
       <br />
       <br />
       <br />
