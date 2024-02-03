@@ -14,7 +14,7 @@ import HauList from './sampleApp/HauList';
 import GuestGreeting from './sampleApp/GuestGreeting';
 import CSS from './CSS';
 import LiftingStateUp from './LiftingStateUp';
-import HauShoeCart from './sampleApp/HauShoeCart';
+// import HauShoeCart from './sampleApp/HauShoeCart';
 import HauBox from './sampleApp/HauBox';
 // react function component by PascalCase
 function LargeText() {
@@ -128,6 +128,10 @@ function App() {
 
       <br />
       <LiftingStateUp />
+
+      <br />
+      {/* <HauShoeCart /> */}
+      <HauBox />
       
       <br />
       <br />
@@ -136,10 +140,7 @@ function App() {
       <br />
       <br />
       <br />
-      <br />
 
-    <HauShoeCart />
-    <HauBox />
    </article>
   )
 }
