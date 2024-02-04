@@ -18,6 +18,7 @@ import LiftingStateUp from './LiftingStateUp';
 import HauBox from './sampleApp/HauBox';
 // react function component by PascalCase
 import Form from './Form';
+import LifecycleHook from './LifecycleHook';
 
 function LargeText() {
   return (
@@ -137,6 +138,9 @@ function App() {
       
       <br />
       <Form />
+
+      <br />
+      <LifecycleHook />
 
       <br />
       <br />

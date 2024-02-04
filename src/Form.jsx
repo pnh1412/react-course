@@ -12,12 +12,16 @@ import Button from './components/Button';
 */
 
 function Form() {
-  const [form, setForm] = React.useState({
+  const initialForm = {
     author: '',
     gender: 0,
-    remember: false,
-  });
+    isRemember: false,
+    email: '',
+  }
+  const [form, setForm] = React.useState(initialForm);
+  const [users, setUsers] = React.useState([]);
   const [firstName, setFirstName] = React.useState('');
+  const [errors, setErrors] = React.useState({}); // {author: 'Please enter input name', email: 'Please enter input email'}
   const lastNameRef = React.useRef('null');
 
   function handleSubmit() {
@@ -29,13 +33,61 @@ function Form() {
 
   function handleSubmitForm(e) {
     e.preventDefault();
-    console.log('Form -> handleSubmitForm: ', form)
+    
+    // validate form
+    if(!form.author) {
+      setErrors(prevState => {
+        return {
+          ...prevState,
+          author: true
+        }
+      })
+     }
+
+     if(!form.email) {
+      setErrors(prevState => {
+        return {
+          ...prevState,
+          email: true
+        }
+      })
+     }
+
+    if(!form.author || !form.email) return;
+
+    const user = {
+      id: new Date().getTime().toString(),
+      author: form.author,
+      email: form.email,
+      gender: form.gender,
+      isRemember: form.isRemember
+    }
+    setUsers(prevState => {
+      return [...prevState, user]
+    })
+
+    // reset form
+    setForm(initialForm)
+
+    // reset validate
+    setErrors({})
   }
+
+  console.log('user ----->: ', users)
 
   function onChangeForm(event) {
     const name = event.target.name;
     const value = event.target.value;
     const type = event.target.type;
+
+    if(name === 'author' && value !== '') {
+      setErrors(prevState => {
+        return {
+          ...prevState,
+          author: false
+        }
+      })
+    }
 
     setForm((prevState) => {
       return {
@@ -44,6 +96,7 @@ function Form() {
       }
     })
   }
+
 
   return (
     <div>
@@ -75,7 +128,15 @@ function Form() {
           Name:
           <input type="text" name="author" value={form.author} onChange={onChangeForm} />
         </label>
-        <br /> <br />
+        <div>{errors.author && `Please enter input author`}</div>
+        
+        <br />
+        <label>
+          Email:
+          <input type="text" name="email" value={form.email} onChange={onChangeForm} />
+        </label>
+        <div>{errors.email && `Please enter input email`}</div>
+        <br /> 
         <label>
           Gender:
           <select name="gender" value={form.gender} onChange={onChangeForm} >
@@ -86,13 +147,35 @@ function Form() {
         <br /> <br />
         <label>
           Remember me:
-          <input type="checkbox" name="remember" checked={form.remember} onChange={onChangeForm}  />
+          <input type="checkbox" name="isRemember" checked={form.isRemember} onChange={onChangeForm}  />
         </label>
 
 
         <br /> <br />
         <Button type="submit" textButton='Submit'/>
       </form>
+      <br /> <br />
+      
+      <table width="100%" border="1">
+        <tr>
+          <th>Author</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Remember</th>
+        </tr>
+       
+       {users.map(user => {
+        return (
+          <tr key={user.id}>
+            <td>{user.author}</td>
+            <td>{user.email}</td>
+            <td>{user.gender}</td>
+            <td>{user.isRemember ? 'Yes' : 'No'}</td>
+          </tr>
+        )
+       })}
+      
+      </table>
       
 
     </div>
