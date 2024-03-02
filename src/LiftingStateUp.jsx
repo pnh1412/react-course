@@ -18,10 +18,10 @@ function LiftingStateUp() {
     })
   }
 
-  function deleteTodo(todoId) {
-    // setTodos....
+  function deleteTodo(todoItem) {
+    // // setTodos....
      setTodos(prevState => {
-      return prevState.filter(todo => todo.id !== todoId)
+      return prevState.filter(todo => todo.id !== todoItem.id)
      })
   }
 

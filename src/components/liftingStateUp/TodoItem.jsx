@@ -2,9 +2,9 @@ import React from 'react'
 import Button from '../Button'
 
 function TodoItem({ todo, deleteTodo }) {
-  function onDelete() {
-    deleteTodo(todo.id);
-  }
+  // function onDelete() {
+  //   deleteTodo(todo.id);
+  // }
 
   return (
     <div key={todo.id} className='todoItem'>
@@ -12,7 +12,8 @@ function TodoItem({ todo, deleteTodo }) {
       <Button 
         textButton='Delete' 
         danger 
-        onClick={onDelete}
+        // onClick={onDelete}
+        onClick={() => deleteTodo(todo)}
       />
     </div>
   )
