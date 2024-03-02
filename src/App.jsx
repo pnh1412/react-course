@@ -19,6 +19,8 @@ import HauBox from './sampleApp/HauBox';
 // react function component by PascalCase
 import Form from './Form';
 import LifecycleHook from './LifecycleHook';
+import ShareStateComponent from './ShareStateComponent';
+import EffectHook from './EffectHook';
 
 function LargeText() {
   return (
@@ -141,6 +143,14 @@ function App() {
 
       <br />
       <LifecycleHook />
+
+        
+      <br />
+      <ShareStateComponent />
+
+      <br />
+      <EffectHook />
+    
 
       <br />
       <br />
