@@ -21,6 +21,8 @@ import Form from './Form';
 import LifecycleHook from './LifecycleHook';
 import ShareStateComponent from './ShareStateComponent';
 import EffectHook from './EffectHook';
+import Movie from './components/contextApi/Movie';
+import RefHooks from './RefHooks';
 
 function LargeText() {
   return (
@@ -135,7 +137,6 @@ function App() {
       <LiftingStateUp />
 
       <br />
-      {/* <HauShoeCart /> */}
       <HauBox />
       
       <br />
@@ -150,6 +151,12 @@ function App() {
 
       <br />
       <EffectHook />
+
+      <br />
+      <Movie />
+
+      <br />
+      <RefHooks />
     
 
       <br />

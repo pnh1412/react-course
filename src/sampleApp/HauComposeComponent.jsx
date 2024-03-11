@@ -13,7 +13,7 @@ function HauComposeComponent() {
   return (
     <div className= "block">
       <div className= "block-text">
-        <Text content="No Items!" />
+        <Text content="No Items!"  />
       </div>
       <div className="container">
         <Button label="Increasement" />
