@@ -23,6 +23,7 @@ import ShareStateComponent from './ShareStateComponent';
 import EffectHook from './EffectHook';
 import Movie from './components/contextApi/Movie';
 import RefHooks from './RefHooks';
+import PerformanceHook from './PerformanceHook';
 
 function LargeText() {
   return (
@@ -157,6 +158,9 @@ function App() {
 
       <br />
       <RefHooks />
+
+      <br />
+      <PerformanceHook />
     
 
       <br />
