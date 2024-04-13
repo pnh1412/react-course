@@ -99,3 +99,18 @@ ul {
 body {
   font-family: Roboto, sans-serif;
 }
+
+
+.customConfig_collapse .ant-collapse-header {
+  background-color: transparent;
+  padding: 10px !important;
+  border-color: transparent;
+}
+
+.customConfig_collapse .ant-collapse-content-box {
+  padding-right: 0 !important;
+}
+
+.customConfig_collapse .ant-collapse-item {
+  border-color: transparent;
+}

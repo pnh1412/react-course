@@ -24,6 +24,7 @@ import EffectHook from './EffectHook';
 import Movie from './components/contextApi/Movie';
 import RefHooks from './RefHooks';
 import PerformanceHook from './PerformanceHook';
+import Collapse from './challenge/Collapse';
 
 function LargeText() {
   return (
@@ -161,6 +162,9 @@ function App() {
 
       <br />
       <PerformanceHook />
+
+      <br />
+      <Collapse />
     
 
       <br />
