@@ -114,3 +114,41 @@ body {
 .customConfig_collapse .ant-collapse-item {
   border-color: transparent;
 }
+
+.experiment-results {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.experiment-results th.axis-col.header-label {
+  padding-bottom: 5px;
+  font-size: 16px;
+}
+
+.experiment-results th.axis-col {
+  background-color: #fff;
+  box-shadow: 0 -1px 0 #0056b3 inset;
+  font-size: 13px;
+}
+
+.results-variation-row {
+  display: none;
+}
+
+.experiment-results  input:checked ~ .results-variation-row {
+  display: table-row;
+}
+
+.experiment-results tbody {
+  position: relative;
+}
+
+.experiment-results  input {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 53px;
+  cursor: pointer;
+  opacity: 0;
+}

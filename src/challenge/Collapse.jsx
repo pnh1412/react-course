@@ -59,6 +59,7 @@ export default function Collapse() {
         </thead>
         {cities.map((city, cityIndex) => (
           <tbody>
+            <input type="checkbox" />
             <tr
               key={cityIndex}
               className="results-variation-head text-[#343a40] bg-[#f7f7f7]"
