@@ -25,6 +25,7 @@ import Movie from './components/contextApi/Movie';
 import RefHooks from './RefHooks';
 import PerformanceHook from './PerformanceHook';
 import Collapse from './challenge/Collapse';
+import HauCollapse from './challenge/HauCollapse';
 
 function LargeText() {
   return (
@@ -174,7 +175,7 @@ function App() {
       <br />
       <br />
       <br />
-
+      <HauCollapse />
    </article>
   )
 }
