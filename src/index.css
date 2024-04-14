@@ -2,6 +2,11 @@ ul {
   margin: 0;
 }
 
+h1, h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .button {
   background-color: #4CAF50;
   border: none;
@@ -145,6 +150,7 @@ body {
 
 .experiment-results  input {
   position: absolute;
+  display: none;
   top: 0px;
   left: 0;
   width: 100%;
