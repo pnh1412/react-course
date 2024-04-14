@@ -9,8 +9,10 @@ Currently, two official plugins are available:
 
 
 ### Step to step gitflow
-
 ```bash
+$ git status: check status file
+
+
 # get latest code from main branch
 $ git pull
 
@@ -18,6 +20,24 @@ $ git pull
 $ git branch --show-current  (check current bracnh)
 $ git checkout -b feature/hau-router
 
+# add all file
+$ git add .
+
+# git commit -m "message ..."
+$ git commit -m "update readme"
+
 # push code
+
+## option1: if remote branch doesn't have your branch
+$ git push --set-upstream origin feature/tony-readme
+
+## option2: if remote branch has your branch
 $ git push
+
+# create PR on github
+1. click tab Pull requests
+2. click "New Pull request" button
+- base: xx -> target branch
+- compare: xx -> sourcer branch
+3. After select branch merge -> click "Create pull request" button
 ```
