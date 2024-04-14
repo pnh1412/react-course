@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link, Routes, Route, NavLink } from 'react-router-dom';
 
 // components
 import Props from './Props';
@@ -27,6 +27,13 @@ import PerformanceHook from './PerformanceHook';
 import Collapse from './challenge/Collapse';
 import HauCollapse from './challenge/HauCollapse';
 import JSX from './JSX';
+import User from './components/outlet/User';
+import Profile from './components/outlet/Profile';
+import Account from './components/outlet/Account';
+
+/* <Outlet>
+  An <Outlet> should be used in parent route elements to render their child route elements.
+*/
 
 
 function App() {
@@ -45,7 +52,10 @@ function App() {
           <Link to="/props" className="text-blue-500 hover:text-blue-800">Props</Link>
         </li>
         <li className="mr-6">
-          <Link to="/state" className="text-blue-500 hover:text-blue-800">State</Link>
+          <NavLink to="/state" className="text-blue-500 hover:text-blue-800">State</NavLink>
+        </li>
+        <li className="mr-6">
+          <Link to="/user" className="text-blue-500 hover:text-blue-800">User</Link>
         </li>
       </ul>
       <br />
@@ -55,8 +65,11 @@ function App() {
         <Route path='/introduction-jsx' element={<JSX />} />
         <Route path='/props' element={<Props />} />
         <Route path='/state' element={<State />} />
+        <Route path='/user' element={<User />}>
+          <Route path='profile' element={<Profile />} />
+          <Route path='account' element={<Account />} />
+        </Route>
       </Routes>  
-
       <br />
       <hr />
       
