@@ -41,3 +41,10 @@ $ git push
 - compare: xx -> sourcer branch
 3. After select branch merge -> click "Create pull request" button
 ```
+
+
+### Step to step deploy with netlify
+1. https://app.netlify.com/ -> https://app.netlify.com/teams/xxxx/overview
+2. click to "Add new site" -> Import an existing project -> deploy with github
+3. Click your repository
+4. click "Deploy"
