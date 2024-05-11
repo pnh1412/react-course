@@ -30,6 +30,8 @@ import JSX from './JSX';
 import User from './components/outlet/User';
 import Profile from './components/outlet/Profile';
 import Account from './components/outlet/Account';
+import SignIn from './components/SignIn';
+import MainLayout from './layouts/MainLayout';
 
 /* <Outlet>
   An <Outlet> should be used in parent route elements to render their child route elements.
@@ -42,42 +44,22 @@ function App() {
   
   // JSX
   return (
-    <article className='p-4'>
-      <h1>My First Component</h1>
-      <ul className="flex">
-        <li className="mr-6">
-          <Link to="/introduction-jsx" className="text-blue-500 hover:text-blue-800">Introduction JSX</Link>
-        </li>
-        <li className="mr-6">
-          <Link to="/props" className="text-blue-500 hover:text-blue-800">Props</Link>
-        </li>
-        <li className="mr-6">
-          <NavLink to="/state" className="text-blue-500 hover:text-blue-800">State</NavLink>
-        </li>
-        <li className="mr-6">
-          <Link to="/user" className="text-blue-500 hover:text-blue-800">User</Link>
-        </li>
-      </ul>
-      <br />
-      <hr />
-      <br />
+    <>
       <Routes>
-        <Route path='/introduction-jsx' element={<JSX />} />
-        <Route path='/props' element={<Props />} />
-        <Route path='/state' element={<State />} />
-        <Route path='/user' element={<User />}>
+        <Route path='/introduction-jsx' element={<MainLayout><JSX /></MainLayout>} />
+        <Route path='/props' element={<MainLayout><Props /></MainLayout>} />
+        <Route path='/state' element={<MainLayout><State /></MainLayout>} />
+        <Route path='/user' element={<MainLayout><User /></MainLayout>}>
           <Route path='profile' element={<Profile />} />
           <Route path='account' element={<Account />} />
         </Route>
+        <Route path='/state' element={<MainLayout><Components count={count} /></MainLayout>} />
+        <Route path='/signin' element={<SignIn />} />
+        <Route path='/*' element={<MainLayout><div>please choose correct url</div></MainLayout>} />
       </Routes>  
+
       <br />
       <hr />
-      
-   
-      <Components 
-        count={count}
-      />
-
       <ComposeComponent />
 
 
@@ -138,7 +120,7 @@ function App() {
       <br />
       <br />
       <HauCollapse />
-   </article>
+    </>
   )
 }
 
