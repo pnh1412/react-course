@@ -5,6 +5,7 @@ function SignIn() {
   const navigate = useNavigate();
 
   function gotoDashboard() {
+    window.localStorage.setItem('access_token', 'tony')
     navigate('/introduction-jsx')
   }
   

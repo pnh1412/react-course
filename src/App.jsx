@@ -32,6 +32,9 @@ import Profile from './components/outlet/Profile';
 import Account from './components/outlet/Account';
 import SignIn from './components/SignIn';
 import MainLayout from './layouts/MainLayout';
+import CommentList from './components/comment/CommentList';
+import CommentDetail from './components/comment/CommentDetail';
+import AuthComponent from './components/AuthComponent';
 
 /* <Outlet>
   An <Outlet> should be used in parent route elements to render their child route elements.
@@ -46,16 +49,27 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/introduction-jsx' element={<MainLayout><JSX /></MainLayout>} />
-        <Route path='/props' element={<MainLayout><Props /></MainLayout>} />
-        <Route path='/state' element={<MainLayout><State /></MainLayout>} />
-        <Route path='/user' element={<MainLayout><User /></MainLayout>}>
+        <Route 
+          path='/introduction-jsx' 
+          element={
+            <AuthComponent>
+              <MainLayout>
+                <JSX />
+              </MainLayout>
+            </AuthComponent> 
+          } 
+        />
+        <Route path='/props' element={<AuthComponent><MainLayout><Props /></MainLayout></AuthComponent>} />
+        <Route path='/state' element={<AuthComponent><MainLayout><State /></MainLayout></AuthComponent>} />
+        <Route path='/user' element={<AuthComponent><MainLayout><User /></MainLayout></AuthComponent>}>
           <Route path='profile' element={<Profile />} />
           <Route path='account' element={<Account />} />
         </Route>
-        <Route path='/state' element={<MainLayout><Components count={count} /></MainLayout>} />
+        <Route path='/state' element={<AuthComponent><MainLayout><Components count={count} /></MainLayout></AuthComponent>} />
         <Route path='/signin' element={<SignIn />} />
-        <Route path='/*' element={<MainLayout><div>please choose correct url</div></MainLayout>} />
+        <Route path='/comment' element={<AuthComponent><MainLayout><CommentList /></MainLayout></AuthComponent>} />
+        <Route path='/comment/:id' element={<AuthComponent><MainLayout><CommentDetail /></MainLayout></AuthComponent>} />
+        <Route path='/*' element={<AuthComponent><MainLayout><div>please choose correct url</div></MainLayout></AuthComponent>} />
       </Routes>  
 
       <br />
