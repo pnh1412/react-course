@@ -16,6 +16,7 @@ function Sidebar() {
         <Link to="/user" className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">User</Link>
         <Link to="/components" className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">Components</Link>
         <Link to="/comment" className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">Comment</Link>
+        <Link to="/test-express" className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">Test API</Link>
       </nav>
     </aside>
   )

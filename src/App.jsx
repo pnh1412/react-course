@@ -35,6 +35,8 @@ import MainLayout from './layouts/MainLayout';
 import CommentList from './components/comment/CommentList';
 import CommentDetail from './components/comment/CommentDetail';
 import AuthComponent from './components/AuthComponent';
+import TestExpressJS from './TestExpressJS';
+import TestExpressJSDetail from './TestExpressJSDetail';
 
 /* <Outlet>
   An <Outlet> should be used in parent route elements to render their child route elements.
@@ -69,7 +71,9 @@ function App() {
         <Route path='/signin' element={<SignIn />} />
         <Route path='/comment' element={<AuthComponent><MainLayout><CommentList /></MainLayout></AuthComponent>} />
         <Route path='/comment/:id' element={<AuthComponent><MainLayout><CommentDetail /></MainLayout></AuthComponent>} />
-        <Route path='/*' element={<AuthComponent><MainLayout><div>please choose correct url</div></MainLayout></AuthComponent>} />
+        <Route path='/test-express' element={<AuthComponent><MainLayout><TestExpressJS /></MainLayout></AuthComponent>} />
+        <Route path='/test-express/:id' element={<AuthComponent><MainLayout><TestExpressJSDetail /></MainLayout></AuthComponent>} />
+        <Route path='/*' element={<AuthComponent><MainLayout><div>Page Not Found</div></MainLayout></AuthComponent>} />
       </Routes>  
 
       <br />
