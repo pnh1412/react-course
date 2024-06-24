@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+
+import { setLoading } from './states/app.actions'
 
 function Person(props) {
   console.log(props)
+  const dispatch = useDispatch();
   const ElementComponent = props.elementComponent;
   
   return (
@@ -25,6 +29,16 @@ function Person(props) {
       <div>JSX expression: {props.renderText}</div>
       <div> React component: {props.buttonComponent}</div>
       <div> React element: <ElementComponent /></div>
+
+      <br />
+      <button 
+        type="button"
+        onClick={() => {
+          dispatch(setLoading(false))
+        }}
+      >
+        toggle loading redux
+      </button>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './components/Button';
+import { useSelector } from 'react-redux';
 
 function LargeText() {
   return (
@@ -14,7 +15,10 @@ function SmallText() {
 }
 
 function JSX() {
+  const isLoadingSelector = useSelector(state => state.app.isLoading);
   const count = 15; // valid javascript 
+
+  console.log('JSX redux ----------:', isLoadingSelector)
   
   const user = {
     firstName: 'John',
